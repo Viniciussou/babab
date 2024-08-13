@@ -1,0 +1,60 @@
+MDScreen:
+    name: 'login'
+    MDCard:
+        orientation: 'vertical'
+        elevation: 5
+        pos_hint: {'center_x': .5, 'center_y': .5}
+        size_hint: None, None
+        size: '350dp', '450dp'
+        padding: 3
+        spacing: 10
+        MDLabel:
+            text: 'Bem vindo'
+            halign: 'center'
+            font_style: 'H2'
+            font_size: '40'
+            size_hint_y: None
+            height: self.texture_size[1]
+            padding_y: 5
+        MDLabel:
+            text: 'conecte-se a sua conta agora!!'
+            halign: 'center'
+            font_size: '20'
+            size_hint_y: None
+            height: self.texture_size[1]
+            padding_y: 5
+        MDTextField:
+            id: email_input
+            mode: "round"
+            pos_hint_y: {'center_y': .10}
+            hint_text: 'digite seu e-mail'
+            icon_right: 'email-arrow-right'
+        MDTextField:
+            id: senha_input
+            mode: "round"
+            pos_hint: {'center_x': .5, 'center_y': .5}
+            hint_text: 'digite sua senha'
+            icon_right: 'eye'
+        MDIconButton:
+            id: toggle_button
+            icon: 'eye-off'
+            pos_hint: {'center_x': 0.5}
+            on_press: app.toggle_password()
+        MDRaisedButton:
+            id: login_button
+            pos_hint: {'center_x': .5, 'center_y': .5}
+            text: 'Login'
+            on_release: root.login()
+        MDIconButton:
+            icon: 'theme-light-dark'
+            text: 'to change theme'
+            on_release: app.theme()
+
+        MDLabel:
+            id: error_label
+            text: ''
+            halign: 'center'
+            font_size: '20'
+            size_hint_y: None
+            height: self.texture_size[1]
+            padding_y: 5

@@ -1,0 +1,70 @@
+#:kivy 2.2.0
+
+MDScreen:
+    name: 'sub'
+    FloatLayout:
+
+        MDCard:
+            elevation: 10
+            pos_hint: {'center_x': .5, 'center_y': .5}
+            size_hint: None, None
+            size: '350dp', '700dp'
+            padding: 3
+            spacing: 10
+
+        Image:
+            source: 'imagens/jogos.png'
+            size_hint: .1, .1
+            pos_hint: {'center_x': .5, 'center_y': .8}
+            allow_stretch: True
+            keep_ratio: False
+
+        #Image:
+            #source: '51bb05e4-27b0-4e3e-a3dd-d408b4f0ffd3.png'
+            #size_hint: .44, 1
+            #pos_hint: {'center_x': .5, 'center_y': .5}
+            #allow_stretch: True
+            #keep_ratio: False
+
+        MDLabel:
+            text: 'Bem vindo'
+            halign: 'center'
+            font_style: 'H2'
+            font_size: '40'
+            size_hint_y: None
+            height: self.texture_size[1]
+            padding_y: 5
+            pos_hint: {'center_x': .5, 'center_y': .7}
+            theme_cls:
+            primary_color: 1, 1, 1, 1
+
+        MDLabel:
+            text: 'seja cem vindo, conecte-se ou cadastre-se para usufruir!!'
+            halign: 'center'
+            font_size: '20'
+            size_hint_y: None
+            height: self.texture_size[1]
+            padding_y: 9
+            pos_hint: {'center_x': .5, 'center_y': .6}
+
+        MDRaisedButton:
+            pos_hint:{'center_x':.5,'center_y':.3}
+            text: 'Cadastrar-se'
+            size_hint_x: .44
+            on_release:
+                root.manager.transition.direction = 'left'
+                root.manager.current = 'signup'
+
+        MDRaisedButton:
+            pos_hint:{'center_x':.5,'center_y':.2}
+            text: 'login'
+            size_hint_x: .44
+            on_release:
+                root.manager.transition.direction = 'left'
+                root.manager.current = 'inicializadores/login.py'
+
+        MDIconButton:
+            icon: 'theme-light-dark'
+            text: 'to change theme'
+            on_release: app.theme()
+            pos_hint:{"center_x":.7, "center_y":.97}
